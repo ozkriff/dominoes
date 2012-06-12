@@ -4,9 +4,9 @@
 #include <cstdio>
 
 void Brick::print_no_rot(int a, int b) {
-   // const char *s = "(%i|%i)";
+   // const char *s = "%i-%i";
    // const char *s = "[%i:%i]";
-   const char *s = "%i-%i";
+   const char *s = "(%i|%i)";
    printf(s, a, b);
 }
 
