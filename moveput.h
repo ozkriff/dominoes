@@ -6,10 +6,10 @@
 class MovePut : public Move {
 private:
 public:
-  MovePut()
-    : Move(MOVE_PUT_TO_SNAKE)
-  {}
-  virtual ~MovePut() {}
+   MovePut()
+      : Move(MOVE_PUT_TO_SNAKE)
+   {}
+   virtual ~MovePut() {}
 };
 
 #endif /* MOVEPUT_H_ */

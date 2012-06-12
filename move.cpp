@@ -3,7 +3,7 @@
 #include "move.h"
 
 Move::Move(MoveType type)
-  : type(type)
+   : type(type)
 {
 }
 
@@ -11,5 +11,5 @@ Move::~Move() {
 }
 
 Move::MoveType Move::get_type() {
-  return type;
+   return type;
 }

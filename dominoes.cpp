@@ -4,5 +4,5 @@
 #include "misc.h"
 
 int main(int /*ac*/, char ** /*av*/) {
-  return Game().run();
+   return Game().run();
 }

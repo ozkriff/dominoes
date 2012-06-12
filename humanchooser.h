@@ -8,11 +8,11 @@
 
 class HumanChooser : public NextBrickChooser {
 private:
-  void put_snake();
-  void print_indexed_list(const BricksList *list);
+   void put_snake();
+   void print_indexed_list(const BricksList *list);
 public:
-  HumanChooser();
-  virtual Move* do_move();
+   HumanChooser();
+   virtual Move* do_move();
 };
 
 #endif /* HUMANCHOOSER_H_ */

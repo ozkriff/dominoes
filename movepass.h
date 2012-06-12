@@ -8,10 +8,10 @@
 class MovePass : public Move {
 private:
 public:
-  MovePass()
-    : Move(MOVE_PASS)
-  {}
-  virtual ~MovePass() {}
+   MovePass()
+      : Move(MOVE_PASS)
+   {}
+   virtual ~MovePass() {}
 };
 
 #endif /* MOVEPASS_H_ */

@@ -7,8 +7,8 @@
 
 class AiChooser : public NextBrickChooser {
 public:
-  AiChooser();
-  virtual Move* do_move();
+   AiChooser();
+   virtual Move* do_move();
 };
 
 #endif /* AICHOOSER_H_ */

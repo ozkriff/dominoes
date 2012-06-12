@@ -5,10 +5,10 @@
 #include "movepass.h"
 
 AiChooser::AiChooser()
-  : NextBrickChooser()
+   : NextBrickChooser()
 {
 }
 
 Move* AiChooser::do_move() {
-  return new MovePass();
+   return new MovePass();
 }

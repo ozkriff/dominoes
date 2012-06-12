@@ -10,19 +10,19 @@
 
 class Game {
 public:
-  Snake *snake;
+   Snake *snake;
 private:
-  PlayersList *players;
-  MovesList *moves;
-  BricksList *all_bricks;
+   PlayersList *players;
+   MovesList *moves;
+   BricksList *all_bricks;
 private:
-  void generate_bricks();
-  int get_players_count();
-  void get_players();
+   void generate_bricks();
+   int get_players_count();
+   void get_players();
 public:
-  Game();
-  ~Game();
-  int run();
+   Game();
+   ~Game();
+   int run();
 };
 
 #endif /* GAME_H_ */

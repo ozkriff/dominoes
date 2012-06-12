@@ -7,13 +7,13 @@
 
 class Snake {
 public:
-  BricksList bricks;
+   BricksList bricks;
 public:
-  void add_brick_right(Brick *brick);
-  void add_brick_left(Brick *brick);
-  void add_first_brick(Brick *brick);
-  void print();
-  bool check_can_put(const Brick *b);
+   void add_brick_right(Brick *brick);
+   void add_brick_left(Brick *brick);
+   void add_first_brick(Brick *brick);
+   void print();
+   bool check_can_put(const Brick *b);
 };
 
 #endif /* SNAKE_H_ */

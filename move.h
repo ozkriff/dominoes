@@ -7,18 +7,18 @@
 
 class Move {
 public:
-  enum MoveType {
-    MOVE_PASS,
-    MOVE_GET_MORE,
-    MOVE_PUT_TO_SNAKE
-  };
+   enum MoveType {
+      MOVE_PASS,
+      MOVE_GET_MORE,
+      MOVE_PUT_TO_SNAKE
+   };
 private:
-  MoveType type;
+   MoveType type;
 public:
-  int player_id;
-  Move(MoveType type);
-  virtual ~Move();
-  MoveType get_type();
+   int player_id;
+   Move(MoveType type);
+   virtual ~Move();
+   MoveType get_type();
 };
 
 typedef std::list<Move*> MovesList;

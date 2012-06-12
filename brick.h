@@ -7,15 +7,15 @@
 
 class Brick {
 private:
-  void print_no_rot(int a, int b);
+   void print_no_rot(int a, int b);
 public:
-  bool is_rotated;
-  int left;
-  int right;
+   bool is_rotated;
+   int left;
+   int right;
 public:
-  Brick(int left, int right, bool is_rotated = false);
-  void print();
-  bool can_connect(const Brick *brick);
+   Brick(int left, int right, bool is_rotated = false);
+   void print();
+   bool can_connect(const Brick *brick);
 };
 
 typedef std::list<Brick*> BricksList;

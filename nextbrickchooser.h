@@ -9,12 +9,12 @@ class Move;
 
 class NextBrickChooser {
 protected:
-  Player *player;
+   Player *player;
 public:
-  NextBrickChooser();
-  virtual ~NextBrickChooser();
-  virtual Move* do_move() = 0;
-  void set_player(Player *player);
+   NextBrickChooser();
+   virtual ~NextBrickChooser();
+   virtual Move* do_move() = 0;
+   void set_player(Player *player);
 };
 
 #endif /* NEXTBRICKCHOOSER_H_ */

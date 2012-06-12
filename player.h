@@ -11,16 +11,16 @@ class NextBrickChooser;
 
 class Player {
 public:
-  Game *game;
+   Game *game;
 private:
-  NextBrickChooser *chooser;
-  int score;
+   NextBrickChooser *chooser;
+   int score;
 public:
-  BricksList bricks;
+   BricksList bricks;
 public:
-  Player(Game *game, NextBrickChooser *chooser);
-  ~Player();
-  Move* do_move();
+   Player(Game *game, NextBrickChooser *chooser);
+   ~Player();
+   Move* do_move();
 };
 
 typedef std::list<Player*> PlayersList;
