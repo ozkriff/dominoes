@@ -47,7 +47,7 @@ void HumanChooser::put_snake() {
    std::advance(brick, brick_index);
    if (left_or_right == 2 ) {
       player->game->snake->add_brick_right(*brick);
-   } else if (left_or_right == 2 ) {
+   } else if (left_or_right == 1 ) {
       player->game->snake->add_brick_left(*brick);
    } else {
       // TODO error

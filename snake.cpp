@@ -3,11 +3,11 @@
 #include "snake.h"
 
 void Snake::add_brick_right(Brick *brick) {
-   bricks.push_front(brick);
+   bricks.push_back(brick);
 }
 
 void Snake::add_brick_left(Brick *brick) {
-   bricks.push_back(brick);
+   bricks.push_front(brick);
 }
 
 void Snake::add_first_brick(Brick *brick) {
