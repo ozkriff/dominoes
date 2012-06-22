@@ -18,12 +18,12 @@ HumanChooser::HumanChooser()
 
 void HumanChooser::print_indexed_list(const TilesList *list) {
    int i = 0;
-   TilesList::const_iterator it = list->begin();
-   while (it != list->end()) {
+   TilesList::const_iterator tile = list->begin();
+   while (tile != list->end()) {
       printf("%d: ", i);
-      (*it)->print();
+      (*tile)->print();
       printf("   ");
-      ++it;
+      ++tile;
       ++i;
    }
    putchar('\n');

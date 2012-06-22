@@ -68,28 +68,28 @@ Game::~Game() {
 
 int Game::run() {
    generate_tiles();
-   for (PlayersList::iterator it = players->begin();
-         it != players->end(); ++it)
+   for (PlayersList::iterator player = players->begin();
+         player != players->end(); ++player)
    {
       int tiles_num = 5;
       for (int i = 0; i < tiles_num; ++i) {
          Tile *b = all_tiles->front();
-         (*it)->tiles.push_back(b);
+         (*player)->tiles.push_back(b);
          all_tiles->pop_front();
       }
    }
 #if 1
-   for (PlayersList::iterator pi = players->begin();
-         pi != players->end(); ++pi)
+   for (PlayersList::iterator player = players->begin();
+         player != players->end(); ++player)
    {
-      print_tiles_list(&(*pi)->tiles);
+      print_tiles_list(&(*player)->tiles);
    }
 #endif
    while (1) {
-      for (PlayersList::iterator it = players->begin();
-            it != players->end(); ++it)
+      for (PlayersList::iterator player = players->begin();
+            player != players->end(); ++player)
       {
-         Move *move = (*it)->do_move();
+         Move *move = (*player)->do_move();
          if (!move)
             die("BAD MOVE!!!\n");
          printf("move type %i\n", move->get_type());

@@ -33,10 +33,10 @@ bool Tile::can_connect(const Tile *tile) {
 }
 
 void print_tiles_list(const TilesList *list) {
-   for (TilesList::const_iterator it = list->begin();
-         it != list->end(); ++it)
+   for (TilesList::const_iterator tile = list->begin();
+         tile != list->end(); ++tile)
    {
-      (*it)->print();
+      (*tile)->print();
       putchar(' ');
    }
    putchar('\n');
