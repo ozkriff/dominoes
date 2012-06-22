@@ -29,7 +29,7 @@ void Game::generate_tiles() {
 int Game::get_players_count() {
    int players_count;
    do {
-      printf("Еnter players count (2 or 4): ");
+      printf("Enter players count (2 or 4): ");
       scanf("%i", &players_count);
    } while (players_count != 4 && players_count != 2);
    return players_count;
