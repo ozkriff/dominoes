@@ -1,4 +1,5 @@
 all: dominoes
+CXX=g++
 CXXFLAGS=-g -Wall -Wextra --pedantic
 objects=aichooser.o brick.o game.o humanchooser.o misc.o \
         move.o nextbrickchooser.o player.o snake.o dominoes.o
