@@ -3,13 +3,13 @@
 #ifndef HUMANCHOOSER_H_
 #define HUMANCHOOSER_H_
 
-#include "nextbrickchooser.h"
-#include "brick.h"
+#include "nexttilechooser.h"
+#include "tile.h"
 
-class HumanChooser : public NextBrickChooser {
+class HumanChooser : public NextTileChooser {
 private:
    void put_snake();
-   void print_indexed_list(const BricksList *list);
+   void print_indexed_list(const TilesList *list);
 public:
    HumanChooser();
    virtual Move* do_move();

@@ -3,17 +3,17 @@
 #ifndef SNAKE_H_
 #define SNAKE_H_
 
-#include "brick.h"
+#include "tile.h"
 
 class Snake {
 public:
-   BricksList bricks;
+   TilesList tiles;
 public:
-   void add_brick_right(Brick *brick);
-   void add_brick_left(Brick *brick);
-   void add_first_brick(Brick *brick);
+   void add_tile_right(Tile *tile);
+   void add_tile_left(Tile *tile);
+   void add_first_tile(Tile *tile);
    void print();
-   bool check_can_put(const Brick *b);
+   bool check_can_put(const Tile *b);
 };
 
 #endif /* SNAKE_H_ */

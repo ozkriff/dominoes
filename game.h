@@ -6,7 +6,7 @@
 #include "snake.h"
 #include "player.h"
 #include "move.h"
-#include "brick.h"
+#include "tile.h"
 
 class Game {
 public:
@@ -14,9 +14,9 @@ public:
 private:
    PlayersList *players;
    MovesList *moves;
-   BricksList *all_bricks;
+   TilesList *all_tiles;
 private:
-   void generate_bricks();
+   void generate_tiles();
    int get_players_count();
    void get_players();
 public:

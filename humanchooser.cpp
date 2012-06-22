@@ -9,16 +9,16 @@
 #include "moveput.h"
 #include "movegetmore.h"
 #include "game.h"
-#include "brick.h"
+#include "tile.h"
 
 HumanChooser::HumanChooser()
-   : NextBrickChooser()
+   : NextTileChooser()
 {
 }
 
-void HumanChooser::print_indexed_list(const BricksList *list) {
+void HumanChooser::print_indexed_list(const TilesList *list) {
    int i = 0;
-   BricksList::const_iterator it = list->begin();
+   TilesList::const_iterator it = list->begin();
    while (it != list->end()) {
       printf("%d: ", i);
       (*it)->print();
@@ -31,28 +31,28 @@ void HumanChooser::print_indexed_list(const BricksList *list) {
 
 void HumanChooser::put_snake() {
    printf("Snake: ");
-   print_bricks_list(&player->game->snake->bricks);
+   print_tiles_list(&player->game->snake->tiles);
    printf("Hand: ");
-   print_indexed_list(&player->bricks);
+   print_indexed_list(&player->tiles);
    printf("Enter index: ");
-   int brick_index;
-   scanf("%d", &brick_index);
+   int tile_index;
+   scanf("%d", &tile_index);
    // TODO check input
    printf("Left(1) or right(2) snake end (1/2): ");
    int left_or_right;
    if (scanf("%d", &left_or_right) != 1)
       die("HumanChooser::put_snake(): scanf");
    // TODO check input
-   std::list<Brick*>::iterator brick = player->bricks.begin();
-   std::advance(brick, brick_index);
+   std::list<Tile*>::iterator tile = player->tiles.begin();
+   std::advance(tile, tile_index);
    if (left_or_right == 2 ) {
-      player->game->snake->add_brick_right(*brick);
+      player->game->snake->add_tile_right(*tile);
    } else if (left_or_right == 1 ) {
-      player->game->snake->add_brick_left(*brick);
+      player->game->snake->add_tile_left(*tile);
    } else {
       // TODO error
    }
-   player->bricks.erase(brick);
+   player->tiles.erase(tile);
    // goto promt_again;
    // TODO generate Move object
 }
@@ -76,17 +76,17 @@ promt_again: // TODO replace with while()
    switch (n) {
    case 1:
       printf("Snake: ");
-      print_bricks_list(&player->game->snake->bricks);
+      print_tiles_list(&player->game->snake->tiles);
       goto promt_again;
       break;
    case 2:
       printf("Hand: ");
-      print_bricks_list(&player->bricks);
+      print_tiles_list(&player->tiles);
       goto promt_again;
       break;
    case 3:
       // PRINT OTHERS TODO
-      // print_bricks_list(player->bricks);
+      // print_tiles_list(player->tiles);
       break;
    case 4:
       put_snake();
@@ -99,7 +99,7 @@ promt_again: // TODO replace with while()
       break;
    case 6:
       // take
-      // TODO add snake.check_brick
+      // TODO add snake.check_tile
       return new MoveGetMore();
       break;
    default:

@@ -3,22 +3,22 @@
 #ifndef PLAYER_H_
 #define PLAYER_H_
 
-#include "brick.h"
+#include "tile.h"
 
 class Move;
 class Game;
-class NextBrickChooser;
+class NextTileChooser;
 
 class Player {
 public:
    Game *game;
 private:
-   NextBrickChooser *chooser;
+   NextTileChooser *chooser;
    int score;
 public:
-   BricksList bricks;
+   TilesList tiles;
 public:
-   Player(Game *game, NextBrickChooser *chooser);
+   Player(Game *game, NextTileChooser *chooser);
    ~Player();
    Move* do_move();
 };

@@ -1,18 +1,18 @@
 // See LICENSE file for copyright and license details.
 
-#include "nextbrickchooser.h"
+#include "nexttilechooser.h"
 #include <cassert>
 #include <cstdio>
 
-NextBrickChooser::NextBrickChooser()
+NextTileChooser::NextTileChooser()
    : player(NULL)
 {
 }
 
-NextBrickChooser::~NextBrickChooser() {
+NextTileChooser::~NextTileChooser() {
 }
 
-void NextBrickChooser::set_player(Player *new_player) {
+void NextTileChooser::set_player(Player *new_player) {
    assert(new_player);
    player = new_player;
 }

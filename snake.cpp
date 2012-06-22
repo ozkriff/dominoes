@@ -2,23 +2,23 @@
 
 #include "snake.h"
 
-void Snake::add_brick_right(Brick *brick) {
-   bricks.push_back(brick);
+void Snake::add_tile_right(Tile *tile) {
+   tiles.push_back(tile);
 }
 
-void Snake::add_brick_left(Brick *brick) {
-   bricks.push_front(brick);
+void Snake::add_tile_left(Tile *tile) {
+   tiles.push_front(tile);
 }
 
-void Snake::add_first_brick(Brick *brick) {
-   bricks.push_front(brick);
+void Snake::add_first_tile(Tile *tile) {
+   tiles.push_front(tile);
 }
 
 void Snake::print() {
-   print_bricks_list(&bricks);
+   print_tiles_list(&tiles);
 }
 
-bool Snake::check_can_put(const Brick *b) {
-   return bricks.front()->can_connect(b)
-         || bricks.back()->can_connect(b);
+bool Snake::check_can_put(const Tile *b) {
+   return tiles.front()->can_connect(b)
+         || tiles.back()->can_connect(b);
 }

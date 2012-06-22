@@ -5,8 +5,8 @@
 
 class MoveGetMore : public Move {
 private:
-   BricksList bricks;
-   Brick *putbrick;
+   TilesList tiles;
+   Tile *puttile;
 public:
    MoveGetMore()
       : Move(MOVE_GET_MORE)

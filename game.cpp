@@ -10,19 +10,19 @@
 #include "humanchooser.h"
 #include "misc.h"
 
-void Game::generate_bricks() {
+void Game::generate_tiles() {
    for (int left = 0; left <= 6; ++left) {
       for (int right = 0; right <= left; ++right) {
-         all_bricks->push_front(new Brick(left, right));
+         all_tiles->push_front(new Tile(left, right));
       }
    }
    {
-      std::vector<Brick*> tmp(all_bricks->begin(), all_bricks->end());
+      std::vector<Tile*> tmp(all_tiles->begin(), all_tiles->end());
       std::random_shuffle(tmp.begin(), tmp.end());
-      std::copy(tmp.begin(), tmp.end(), all_bricks->begin());
+      std::copy(tmp.begin(), tmp.end(), all_tiles->begin());
    }
 #if 1
-   print_bricks_list(all_bricks);
+   print_tiles_list(all_tiles);
 #endif
 }
 
@@ -41,7 +41,7 @@ void Game::get_players() {
       printf("Is player %i - ai? (y/n) ", i);
       char answer[10];
       scanf("%9s", answer);
-      NextBrickChooser *chooser;
+      NextTileChooser *chooser;
       if (strcmp(answer, "y") == 0) {
          chooser = new AiChooser();
       } else if(strcmp(answer, "n") == 0) {
@@ -58,7 +58,7 @@ Game::Game()
    : snake(new Snake),
       players(new PlayersList),
       moves(new MovesList),
-      all_bricks(new BricksList)
+      all_tiles(new TilesList)
 {
    get_players();
 }
@@ -67,22 +67,22 @@ Game::~Game() {
 }
 
 int Game::run() {
-   generate_bricks();
+   generate_tiles();
    for (PlayersList::iterator it = players->begin();
          it != players->end(); ++it)
    {
-      int bricks_num = 5;
-      for (int i = 0; i < bricks_num; ++i) {
-         Brick *b = all_bricks->front();
-         (*it)->bricks.push_back(b);
-         all_bricks->pop_front();
+      int tiles_num = 5;
+      for (int i = 0; i < tiles_num; ++i) {
+         Tile *b = all_tiles->front();
+         (*it)->tiles.push_back(b);
+         all_tiles->pop_front();
       }
    }
 #if 1
    for (PlayersList::iterator pi = players->begin();
          pi != players->end(); ++pi)
    {
-      print_bricks_list(&(*pi)->bricks);
+      print_tiles_list(&(*pi)->tiles);
    }
 #endif
    while (1) {

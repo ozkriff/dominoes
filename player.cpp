@@ -2,9 +2,9 @@
 
 #include "player.h"
 #include <cstdio>
-#include "nextbrickchooser.h"
+#include "nexttilechooser.h"
 
-Player::Player(Game *game, NextBrickChooser *chooser)
+Player::Player(Game *game, NextTileChooser *chooser)
    : game(game),
       chooser(chooser)
 {

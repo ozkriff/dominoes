@@ -3,9 +3,9 @@
 #ifndef AICHOOSER_H_
 #define AICHOOSER_H_
 
-#include "nextbrickchooser.h"
+#include "nexttilechooser.h"
 
-class AiChooser : public NextBrickChooser {
+class AiChooser : public NextTileChooser {
 public:
    AiChooser();
    virtual Move* do_move();

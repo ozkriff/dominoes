@@ -5,7 +5,7 @@
 #include "movepass.h"
 
 AiChooser::AiChooser()
-   : NextBrickChooser()
+   : NextTileChooser()
 {
 }
 
