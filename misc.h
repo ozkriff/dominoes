@@ -5,4 +5,12 @@
 
 void die(const char *errstr, ...);
 
+template <typename ContainerType>
+void clean_pointer_container (ContainerType *container) {
+   while (container->size() > 0) {
+      delete container->back();
+      container->pop_back();
+   }
+}
+
 #endif /* MISC_H_ */
