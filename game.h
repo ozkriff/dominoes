@@ -14,7 +14,7 @@ public:
 private:
    PlayersList *players;
    MovesList *moves;
-   TilesList *all_tiles;
+   TilesList *deck;
 private:
    void generate_tiles();
    int get_players_count();
