@@ -13,6 +13,7 @@ Player::Player(Game *game, NextTileChooser *chooser)
 }
 
 Player::~Player() {
+   delete chooser;
 }
 
 Move* Player::do_move() {
