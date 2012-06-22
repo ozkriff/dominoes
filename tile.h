@@ -4,6 +4,7 @@
 #define TILE_H_
 
 #include <list>
+#include <vector>
 
 class Tile {
 private:
@@ -21,5 +22,6 @@ public:
 typedef std::list<Tile*> TilesList;
 
 void print_tiles_list(const TilesList *list);
+void print_tiles_list(const std::vector<Tile*> *vector);
 
 #endif /* TILE_H_ */

@@ -41,3 +41,13 @@ void print_tiles_list(const TilesList *list) {
    }
    putchar('\n');
 }
+
+void print_tiles_list(const std::vector<Tile*> *vector) {
+   for (std::vector<Tile*>::const_iterator tile = vector->begin();
+         tile != vector->end(); ++tile)
+   {
+      (*tile)->print();
+      putchar(' ');
+   }
+   putchar('\n');
+}
