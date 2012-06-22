@@ -55,6 +55,9 @@ Game::Game() {
 }
 
 Game::~Game() {
+   clean_pointer_container(&deck);
+   clean_pointer_container(&players);
+   clean_pointer_container(&moves);
 }
 
 int Game::run() {
