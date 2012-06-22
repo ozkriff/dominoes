@@ -31,7 +31,7 @@ void HumanChooser::print_indexed_list(const TilesList *list) {
 
 void HumanChooser::put_snake() {
    printf("Snake: ");
-   print_tiles_list(&player->game->snake->tiles);
+   print_tiles_list(&player->game->snake.tiles);
    printf("Hand: ");
    print_indexed_list(&player->tiles);
    printf("Enter index: ");
@@ -46,9 +46,9 @@ void HumanChooser::put_snake() {
    std::list<Tile*>::iterator tile = player->tiles.begin();
    std::advance(tile, tile_index);
    if (left_or_right == 2 ) {
-      player->game->snake->add_tile_right(*tile);
+      player->game->snake.add_tile_right(*tile);
    } else if (left_or_right == 1 ) {
-      player->game->snake->add_tile_left(*tile);
+      player->game->snake.add_tile_left(*tile);
    } else {
       // TODO error
    }
@@ -76,7 +76,7 @@ promt_again: // TODO replace with while()
    switch (n) {
    case 1:
       printf("Snake: ");
-      print_tiles_list(&player->game->snake->tiles);
+      print_tiles_list(&player->game->snake.tiles);
       goto promt_again;
       break;
    case 2:

@@ -13,12 +13,12 @@
 void Game::generate_tiles() {
    for (int left = 0; left <= 6; ++left) {
       for (int right = 0; right <= left; ++right) {
-         deck->push_back(new Tile(left, right));
+         deck.push_back(new Tile(left, right));
       }
    }
-   std::random_shuffle(deck->begin(), deck->end());
+   std::random_shuffle(deck.begin(), deck.end());
 #if 1
-   print_tiles_list(deck);
+   print_tiles_list(&deck);
 #endif
 }
 
@@ -46,16 +46,11 @@ void Game::get_players() {
          // TODO
          die("'%s'?!?!? [y] OR [n]!\n", answer);
       }
-      players->push_back(new Player(this, chooser));
+      players.push_back(new Player(this, chooser));
    }
 }
 
-Game::Game()
-   : snake(new Snake),
-      players(new PlayersList),
-      moves(new MovesList),
-      deck(new std::vector<Tile*>)
-{
+Game::Game() {
    get_players();
 }
 
@@ -64,32 +59,32 @@ Game::~Game() {
 
 int Game::run() {
    generate_tiles();
-   for (PlayersList::iterator player = players->begin();
-         player != players->end(); ++player)
+   for (PlayersList::iterator player = players.begin();
+         player != players.end(); ++player)
    {
       int tiles_num = 5;
       for (int i = 0; i < tiles_num; ++i) {
-         Tile *b = deck->back();
+         Tile *b = deck.back();
          (*player)->tiles.push_back(b);
-         deck->pop_back();
+         deck.pop_back();
       }
    }
 #if 1
-   for (PlayersList::iterator player = players->begin();
-         player != players->end(); ++player)
+   for (PlayersList::iterator player = players.begin();
+         player != players.end(); ++player)
    {
       print_tiles_list(&(*player)->tiles);
    }
 #endif
    while (1) {
-      for (PlayersList::iterator player = players->begin();
-            player != players->end(); ++player)
+      for (PlayersList::iterator player = players.begin();
+            player != players.end(); ++player)
       {
          Move *move = (*player)->do_move();
          if (!move)
             die("BAD MOVE!!!\n");
          printf("move type %i\n", move->get_type());
-         moves->push_back(move);
+         moves.push_back(move);
       }
    }
    return EXIT_SUCCESS;

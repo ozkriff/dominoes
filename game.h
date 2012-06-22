@@ -11,11 +11,11 @@
 
 class Game {
 public:
-   Snake *snake;
+   Snake snake;
 private:
-   PlayersList *players;
-   MovesList *moves;
-   std::vector<Tile*> *deck;
+   PlayersList players;
+   MovesList moves;
+   std::vector<Tile*> deck;
 private:
    void generate_tiles();
    int get_players_count();
