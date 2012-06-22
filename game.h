@@ -3,6 +3,7 @@
 #ifndef GAME_H_
 #define GAME_H_
 
+#include <vector>
 #include "snake.h"
 #include "player.h"
 #include "move.h"
@@ -14,7 +15,7 @@ public:
 private:
    PlayersList *players;
    MovesList *moves;
-   TilesList *deck;
+   std::vector<Tile*> *deck;
 private:
    void generate_tiles();
    int get_players_count();

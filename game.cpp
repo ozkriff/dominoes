@@ -13,14 +13,10 @@
 void Game::generate_tiles() {
    for (int left = 0; left <= 6; ++left) {
       for (int right = 0; right <= left; ++right) {
-         deck->push_front(new Tile(left, right));
+         deck->push_back(new Tile(left, right));
       }
    }
-   {
-      std::vector<Tile*> tmp(deck->begin(), deck->end());
-      std::random_shuffle(tmp.begin(), tmp.end());
-      std::copy(tmp.begin(), tmp.end(), deck->begin());
-   }
+   std::random_shuffle(deck->begin(), deck->end());
 #if 1
    print_tiles_list(deck);
 #endif
@@ -58,7 +54,7 @@ Game::Game()
    : snake(new Snake),
       players(new PlayersList),
       moves(new MovesList),
-      deck(new TilesList)
+      deck(new std::vector<Tile*>)
 {
    get_players();
 }
@@ -73,9 +69,9 @@ int Game::run() {
    {
       int tiles_num = 5;
       for (int i = 0; i < tiles_num; ++i) {
-         Tile *b = deck->front();
+         Tile *b = deck->back();
          (*player)->tiles.push_back(b);
-         deck->pop_front();
+         deck->pop_back();
       }
    }
 #if 1
